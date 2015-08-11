@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace Futura\src;
 
 class Home {
@@ -6,11 +6,15 @@ class Home {
 	/**
 	* Ham cong hai so
 	*
-	* @param 
-	* @return 
+	* @param
+	* @return
 	*/
 	public function add($a, $b){
 		return $a + $b;
 	}
 
-}	
+	public function mutiply(){
+		
+	}
+
+}
