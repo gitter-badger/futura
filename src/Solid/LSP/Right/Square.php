@@ -3,7 +3,7 @@ namespace Futura\Solid\LSP\Right;
 
 use Futura\Solid\LSP\Right\Shape;
 
-class ClassName extends Shape
+class Square extends Shape
 {
 	
 	public function getWidth() {
@@ -25,6 +25,7 @@ class ClassName extends Shape
 	public function setWidthAndHeight($value) {
 		$this->width = $value;
 		$this->height = $value;
+		/*var_dump($this->width);*/
 	}
 
 }

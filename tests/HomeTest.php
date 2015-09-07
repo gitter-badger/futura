@@ -9,13 +9,21 @@ use Futura\Solid\LSP\Wrong\Square;
 use Futura\Solid\LSP\Wrong\Client;
 
 use Futura\Solid\LSP\Right\Client as RightClient;
+use Futura\Solid\LSP\Right\Square as RightSquare;
+
+use Futura\Solid\DIP\Wrong\PDFBook;
+use Futura\Solid\DIP\Wrong\PDFReader;
+
+use Futura\Solid\DIP\Right\PDFBook as RightPDFBook;
+use Futura\Solid\DIP\Right\MobiBook;
+use Futura\Solid\DIP\Right\EbookReader;
 
 class HomeTest extends \PHPUnit_Framework_TestCase {
+
 
 	public function getAdd() {
 		return [
 			[1,2,3],
-			[4,5,6],
 			[4,5,9]
 		];
 	}
@@ -26,7 +34,6 @@ class HomeTest extends \PHPUnit_Framework_TestCase {
 	public function testAdd($a, $b, $c) {
 		$add = new Home;
 		$test = $add->add($a, $b);
-		//var_dump($test);
 		$this->assertEquals($c, $test);
 	}
 
@@ -53,6 +60,7 @@ class HomeTest extends \PHPUnit_Framework_TestCase {
 	/**
 	* Test Wrong Liskov Substitution Principle
 	* @dataProvider addArea
+	* @expectedException Exception
 	*/
 	public function testArea($r) {
 		$c = new Client;
@@ -61,8 +69,32 @@ class HomeTest extends \PHPUnit_Framework_TestCase {
 
 	public function testAreaRight() {
 		$c = new RightClient;
-		$r = new Square;
-		$this->assertTrue($c->areaVerifier())
+		$r = new RightSquare;
+		$this->assertTrue($c->areaVerifier($r));
+	}
+
+	/**
+	* Test Dependency Inversion Principle Wrong
+	*/
+	public function testWrongPDFBook() {
+		$b = new PDFBook;
+		$r = new PDFReader($b);
+		$this->assertRegExp('/book/', $r->read());
+	}
+
+	public function addBook() {
+		return [
+			[new RightPDFBook],
+			[new MobiBook],
+		];
+	}
+
+	/**
+	 * @dataProvider addBook
+	 */
+	public function testRightBook($r) {
+		$r = new EbookReader($r);
+		$this->assertRegExp('/book/', $r->read(), 'message');
 	}
 
 }

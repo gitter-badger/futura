@@ -2,15 +2,14 @@
 namespace Futura\Solid\LSP\Right;
 
 use Futura\Solid\LSP\Right\Shape;
-
-class Client extends Shape
+use Exception;
+class Client
 {
 	
 	function areaVerifier(Shape $r) {
-        $r->setWidth(5);
-        $r->setHeight(4);
- 
-        if($r->area() != 20) {
+        $r->setWidth(4);
+        $r->setHeight(5);
+        if($r->area() != 25) {
             throw new Exception('Bad area!');
         }
  
