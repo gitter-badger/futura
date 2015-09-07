@@ -7,5 +7,6 @@ sudo: required
 
 before_install:
   - php /home/travis/.phpenv/versions/5.6/bin/composer self-update
+  - php /home/travis/.phpenv/versions/5.6/bin/composer install
 
 script: phpunit --configuration phpunit.xml
