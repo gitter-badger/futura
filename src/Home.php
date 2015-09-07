@@ -1,5 +1,5 @@
 <?php
-namespace Futura\src;
+namespace Futura;
 
 class Home {
 
@@ -14,7 +14,7 @@ class Home {
 	}
 
 	public function mutiply(){
-		
+
 	}
 
 }
