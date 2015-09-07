@@ -92,9 +92,9 @@ class HomeTest extends \PHPUnit_Framework_TestCase {
 	/**
 	 * @dataProvider addBook
 	 */
-	public function testRightBook($r) {
-		$r = new EbookReader($r);
-		$this->assertRegExp('/book/', $r->read(), 'message');
+	public function testRightBook($b) {
+		$r = new EbookReader($b);
+		$this->assertRegExp('/book/', $r->read());
 	}
 
 }

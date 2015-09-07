@@ -5,14 +5,14 @@ use Futura\Solid\DIP\Right\Ebook;
 
 class EbookReader {
 
-	private $book
+	private $book;
 
 	public function __construct(Ebook $book) {
 		$this->book = $book;
 	}
 
 	public function read() {
-		$this->book->read();
+		return $this->book->read();
 	}
 	
 } 
