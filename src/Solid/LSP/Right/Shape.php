@@ -4,13 +4,12 @@ namespace Futura\Solid\LSP\Right;
 abstract class Shape {
 	protected $height;
 	protected $width;
-	public abstract function getHeight();
-	public abstract function getWidth();
-	public abstract function setHeight($height);
-	public abstract function setWidth($width);
+	abstract public function getHeight();
+	abstract public function getWidth();
+	abstract public function setHeight($height);
+	abstract public function setWidth($width);
 
 	public function area() {
 		return $this->width * $this->height;
 	}
 }
-?>

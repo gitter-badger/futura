@@ -3,6 +3,7 @@ namespace Futura\Solid\LSP\Right;
 
 use Futura\Solid\LSP\Right\Shape;
 use Exception;
+
 class Client
 {
 	
@@ -17,4 +18,3 @@ class Client
     }
 
 }
-?>
