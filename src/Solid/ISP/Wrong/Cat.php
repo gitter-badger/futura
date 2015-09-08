@@ -15,4 +15,3 @@ class Cat implements Animal {
 	}
 
 }
-?>

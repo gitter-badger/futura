@@ -8,5 +8,3 @@ interface Measurable {
     public function getSent();
 
 }
-
-?>

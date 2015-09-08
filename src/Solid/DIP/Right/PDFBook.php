@@ -10,4 +10,3 @@ class PDFBook implements Ebook {
 	}
 
 }
-?>

@@ -10,4 +10,3 @@ class MobiBook implements Ebook {
 	}
 
 }
-?>

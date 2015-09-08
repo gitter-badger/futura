@@ -25,8 +25,6 @@ class Square extends Shape
 	public function setWidthAndHeight($value) {
 		$this->width = $value;
 		$this->height = $value;
-		/*var_dump($this->width);*/
 	}
 
 }
-?>
