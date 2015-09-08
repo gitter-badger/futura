@@ -5,5 +5,3 @@ interface Animal {
 	public function fly();
 	public function run();
 }
-
-?>

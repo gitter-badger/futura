@@ -6,4 +6,3 @@ class PDFBook {
 		return "read a pdf book";
 	}
 }
-?>

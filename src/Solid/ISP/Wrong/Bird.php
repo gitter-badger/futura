@@ -9,4 +9,3 @@ class Bird extends Animal {
         parent::example();
     }
 }
-?>

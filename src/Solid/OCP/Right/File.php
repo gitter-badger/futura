@@ -36,5 +36,3 @@ class File implements Measurable {
     }
 
 }
-
-
