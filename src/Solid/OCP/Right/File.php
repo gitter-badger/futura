@@ -11,27 +11,27 @@ class File implements Measurable {
     public $filename;
     public $owner;
 
-    function setLength($length) {
+    public function setLength($length) {
         $this->length = $length;
     }
 
-    function getLength() {
+    public function getLength() {
         return $this->length;
     }
 
-    function setSent($sent) {
+    public function setSent($sent) {
         $this->sent = $sent;
     }
 
-    function getSent() {
+    public function getSent() {
         return $this->sent;
     }
 
-    function getRelativePath() {
+    public function getRelativePath() {
         return dirname($this->filename);
     }
 
-    function getFullPath() {
+    public function getFullPath() {
         return realpath($this->getRelativePath());
     }
 

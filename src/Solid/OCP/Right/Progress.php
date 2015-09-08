@@ -11,7 +11,7 @@ class Progress {
 		  $this->measurableContent = $measurableContent;
 		}
 
-    function getAsPercent() {
+    public function getAsPercent() {
         return $this->measurableContent->getSent() * 100 / $this->measurableContent->getLength();
     }
 
