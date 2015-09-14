@@ -7,7 +7,7 @@ use Exception;
 class Client
 {
 	
-	function areaVerifier(Shape $r) {
+	public function areaVerifier(Shape $r) {
         $r->setWidth(4);
         $r->setHeight(5);
         if($r->area() != 25) {
