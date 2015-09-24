@@ -1,6 +1,8 @@
 <?php
 use Futura\Home;
 
+use Mockery as m;
+
 use Futura\Solid\OCP\Right\File;
 use Futura\Solid\OCP\Right\Progress;
 
@@ -20,6 +22,16 @@ use Futura\Solid\DIP\Right\EbookReader;
 
 class HomeTest extends \PHPUnit_Framework_TestCase {
 
+	public function tearDown() {
+		return m::close();
+	}
+
+	public function testGetsAverageTemperature() {
+		$service = m::mock('service');
+		$service->shouldReceive('readTemp')->times(3)->andReturn(10, 12, 14);
+		$temperature = new Home($service);
+		$this->assertEquals(12, $temperature->average());
+	}
 
 	public function getAdd() {
 		return [
@@ -32,7 +44,7 @@ class HomeTest extends \PHPUnit_Framework_TestCase {
 	* @dataProvider getAdd
 	*/
 	public function testAdd($a, $b, $c) {
-		$add = new Home;
+		$add = new Home(1);
 		$test = $add->add($a, $b);
 		$this->assertEquals($c, $test);
 	}
